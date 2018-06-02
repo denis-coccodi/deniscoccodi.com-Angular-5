@@ -1,0 +1,43 @@
+<div id="stripe" class="py-0">
+  <app-shared-jumbotron></app-shared-jumbotron>
+</div>
+<div [ngClass]="{'container': windowSize.isDesktopSize()}">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h3 class="text-center pt-4 pb-1 text-uppercase">
+        {{ coreService.getLang() === 'eng' ? ('RESuME' | uppercase) : ('CURRICULuM' | uppercase) }}
+      </h3>
+      <accordion *ngFor="let categoryRef of getCategories(); let i = index">
+        <accordion-group
+          [id]="categoryRef.categoryName"
+          class="mb-2"
+          [ngClass]="{'mx-1': !windowSize.isDesktopSize()}"
+          [heading]="categoryRef.categoryDesc | uppercase"
+          [isOpen]="status.isOpen">
+          <app-cv-item
+            *ngFor="let occurrenceRef of categoryRef.occurrences"
+            [category]="categoryRef"
+            [occurrence]="occurrenceRef"
+          ></app-cv-item>
+        </accordion-group>
+
+        <accordion-group
+          *ngIf="i === 1"
+          [id]="'tables'"
+          class="mb-2"
+          [ngClass]="{'mx-1': !windowSize.isDesktopSize()}"
+          [isOpen]="status.isOpen"
+          [heading]="coreService.getLang() === 'eng' ? ('personal skills' | uppercase) : 'competenze personali' | uppercase">
+          <app-table-languages></app-table-languages>
+          <hr>
+          <app-table-digital></app-table-digital>
+        </accordion-group>
+      </accordion>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<app-shared-modal></app-shared-modal>

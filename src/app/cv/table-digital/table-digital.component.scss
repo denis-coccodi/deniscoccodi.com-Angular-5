@@ -1,0 +1,40 @@
+@media screen and (min-width: 992px) { /*all desktop devices*/
+  .leftColumn {
+    border-right: 1px solid black;
+  }
+}
+
+.leftColumn {
+  color: #ff7200;
+}
+
+.cvTable th{
+  width: 710px;
+}
+
+.cvTable th{
+  text-align: center;
+  vertical-align: middle;
+  color: #ff7200;
+  border: 1px solid black;
+}
+
+.cvTable td{
+  border-bottom: black solid 1px;
+}
+
+table tr td:first-child, table tr th:first-child {
+  border-left: 0;
+}
+
+table tr td:last-child, table tr th:last-child {
+  border-right: 0;
+}
+
+.cvTable td {
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-color: black;
+  text-align: center;
+  vertical-align: middle;
+}

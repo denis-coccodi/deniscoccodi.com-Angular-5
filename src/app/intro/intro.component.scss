@@ -1,0 +1,100 @@
+@mixin bgSize($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+@mixin startTransform($translHoriz, $translVert, $x, $y, $z, $angle) {
+  -webkit-transform: translate($translHoriz, $translVert) rotate3d($x, $y, $z, $angle);
+  -ms-transform: translate($translHoriz, $translVert) rotate3d($x, $y, $z, $angle);
+  -o-transform: translate($translHoriz, $translVert) rotate3d($x, $y, $z, $angle);
+  transform: translate($translHoriz, $translVert) rotate3d($x, $y, $z, $angle);
+}
+
+@media screen and (orientation: landscape) {
+
+  #homePageTitle {
+    width: 85vh;
+    top: 45vh;
+    left: calc(50% - 42.5vh);
+  }
+
+  .polaroidFrameDiv {
+    position: absolute;
+    width: 20vh;
+    padding-top: 23vh;
+    top: 40vh;
+    left: calc(50% - 10vh);
+  }
+
+}
+
+@media screen and (orientation: portrait) {
+
+  #homePageTitle {
+    width: 85vw;
+    top: 33vh;
+    left: calc(50% - 42.5vw);
+  }
+
+  .polaroidFrameDiv {
+    position: absolute;
+    width: 20vw;
+    padding-top: 23vw;
+    top: 30vh;
+    left: calc(50% - 10vw);
+  }
+
+}
+
+#introContainer {
+  height: 90vh;
+}
+
+#homePageTitle {
+  position: absolute;
+  z-index: 200;
+  border: 1px solid #3d3d3d;
+  border-radius: 2% / 12%;
+}
+
+#background {
+  position: absolute;
+  background: url(../../assets/images/introBg.jpg) no-repeat center center fixed;
+  @include bgSize(cover);
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  z-index: -2 !important;
+}
+
+.frameStart {
+  @include startTransform(0, -165%, 0, 1, 0, -90deg);
+  opacity: 0
+}
+
+.polaroidFrame {
+  position: absolute;
+  border-radius: 4% / 3%;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/home/polaroidFrame.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.polaroidPic {
+  position: absolute;
+  object-fit: cover;
+  top: 4.5%;
+  left: 3.5%;
+  border-radius: 3px;
+  width: 93.5%;
+  height: 75%;
+  opacity: 0;
+}

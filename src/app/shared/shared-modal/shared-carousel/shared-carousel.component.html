@@ -1,0 +1,6 @@
+<carousel [interval]="0" [noWrap]="true">
+  <slide *ngFor="let image of cvImgService.getCurrentImageSet().images">
+    <img [src]="image.picUrl" [alt]="'Denis_Coccodi_Pic_' + image.id" style="display: block; width: 100%;">
+  </slide>
+</carousel>
+

@@ -1,0 +1,62 @@
+@media screen and (min-width: 992px){ /*all desktop devices*/
+
+  #DenisImgLink img:hover {
+    box-shadow: 0 0 5px #ededed, 0 0 5px #ededed;
+  }
+
+  #jumbo {
+    max-width: 580px;
+  }
+
+  #innerJumbo {
+    max-height: 10px;
+  }
+
+}
+
+@media screen and (max-width: 991px) { /*all handheld devices*/
+
+  #jumbo {
+    max-width: 420px;
+    margin: 10px 0;
+  }
+
+}
+
+.handCursor {
+  cursor:pointer;
+}
+
+.roundedImg {
+  border: #d1d1d1 solid 1px;
+  border-radius: 5px;
+}
+
+#jumbo{
+  padding: 10px;
+  background-color: transparent;
+}
+
+.darkOrangeText {
+  color: darkorange;
+}
+
+.jumboItemBg {
+  border-radius: 3px;
+  border: 1px solid black;
+  background: rgba(10,10,10,0.8);
+}
+
+.jumboItemText {
+  color: white;
+}
+
+.jumboItemText > a:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #ff7200;
+}
+
+.jumboItemText:focus {
+  color: #ff7200;
+}

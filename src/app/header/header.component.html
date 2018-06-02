@@ -1,0 +1,91 @@
+<header
+  class="navbar navbar-light navbar-fixed-top navbar-expand-lg p-0 w-100"
+  [ngClass]="{
+    'p-1': !windowSize.isDesktopSize(),
+    'px-1': windowSize.isDesktopSize()}">
+  <div
+    [ngClass]="{'container-fluid': !windowSize.isDesktopSize()}"
+    (window:resize)="windowSize.onResize()">
+    <div id="logo" class="mx-auto">
+      <a
+        class="navbar-brand text-white p-0"
+        [routerLink]="['/']"
+        queryParamsHandling="merge"
+        (click)="isNavbarCollapsed = true"
+        id="brand">
+        <img class="greyscale" src="../../assets/images/DenisLogo.png">
+      </a>
+    </div>
+
+    <button
+      class="navbar-toggler
+       navbar-toggler-right"
+      type="button"
+      (click)="toggleNavbar()"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="fa fa-bars"></span>
+    </button>
+  </div>
+
+  <div [ngClass]="(windowSize.isDesktopSize()) ? 'mr-auto' : 'mx-auto'" id="linksDiv">
+    <div
+      class="navbar-collapse collapse navbar-toggleable"
+      [collapse]="isNavbarCollapsed"
+      id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item m-0" *ngFor="let headerLink of getHeaderLinks()">
+          <a
+            class="nav-link text-uppercase linkBg"
+            [ngClass]="(windowSize.getCurrentSize()) === 'xl' ? 'px-4' : 'px-2'"
+            [routerLink]="[headerLink.link]"
+            queryParamsHandling="merge"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
+            <i class="fa fa-fw" [ngClass]="headerLink.icon"></i>
+            <strong>{{ headerLink.name | uppercase }}</strong>
+          </a>
+        </li>
+        <li class="nav-item m-0 d-flex flex-row">
+          <a
+            class="nav-link text-uppercase linkBg"
+            [ngClass]="(windowSize.getCurrentSize()) === 'xl' ? 'px-4' : 'px-2'"
+            queryParamsHandling="merge"
+            (click)="showFlags()">
+            <i class="fa fa-fw fa-globe"></i>
+            <strong>
+              {{ (coreService.getLang() === 'eng') ? ('language' | uppercase) : ('lingua' | uppercase) }}
+            </strong>
+          </a>
+          <div class="my-auto" [@flagsOpacity]="flagsOpacityState">
+            <a class="text-uppercase p-0 ml-1 my-auto nav-link"
+               (click)="setHeaderLinks()"
+               *ngIf="getCurrentPathLength() > 1">
+              <div class="d-inline-flex flex-row">
+                <div class="px-1">
+                  <img
+                    src="../../assets/images/uk-xs.jpg"
+                    class="rounded pointer darkenImage"
+                    height="15"
+                    (click)="coreService.setLang('eng')"
+                    (click)="isNavbarCollapsed = !isNavbarCollapsed"
+                    alt="Denis Coccodi">
+                </div>
+                <div class="px-1">
+                  <img
+                    src="../../assets/images/ita-xs.jpg"
+                    class="rounded pointer darkenImage"
+                    height="15"
+                    (click)="coreService.setLang('ita')"
+                    (click)="isNavbarCollapsed = !isNavbarCollapsed"
+                    alt="Denis Coccodi">
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+

@@ -1,0 +1,23 @@
+@mixin bgSize($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+#bgColor {
+  background-color: #3d3d3d;
+}
+
+#background {
+  background: url(../../../assets/images/bioBg.jpg) no-repeat center center fixed;
+  @include bgSize(cover);
+  width: 100%;
+}
+
+#bioContainer {
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.90);
+  max-width: 600px;
+  font-family: "Times New Roman";
+}

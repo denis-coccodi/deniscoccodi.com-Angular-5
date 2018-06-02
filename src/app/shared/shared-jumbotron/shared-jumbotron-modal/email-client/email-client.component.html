@@ -1,0 +1,62 @@
+<div
+  *ngIf="isEmailSuccess() !== undefined"
+  [ngClass]="[
+    isEmailSuccess() ? 'alert alert-success' : 'alert alert-danger'
+  ]">
+  <strong>{{ getEmailResultString() }}</strong>
+</div>
+
+<form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="fromTxt">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="fromTxt"
+      formControlName="fromTxt"
+      aria-describedby="emailHelp"
+      placeholder="{{getEmailPlaceholder()}}">
+    <small *ngIf="!emailForm.get('fromTxt').valid && emailForm.get('fromTxt').touched">
+      <p>
+        <span *ngIf="emailForm.get('fromTxt')
+          .errors['email']">
+          {{coreService.getLang() === 'eng' ? 'Please enter a valid email.' : 'Inserisci una email valida!'}}
+          <br>
+        </span>
+        <span *ngIf="emailForm.get('fromTxt')
+          .errors['required']">
+          {{coreService.getLang() === 'eng' ? 'This field is required! ' : 'Questo campo è obbligatorio!'}}
+        </span>
+      </p>
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="sbjTxt">{{getSubjectLabel()}}</label>
+    <input
+      type="text"
+      class="form-control"
+      id="sbjTxt"
+      formControlName="sbjTxt"
+      aria-describedby="subjectHelp"
+      placeholder="{{getSubjectPlaceholder()}}">
+    <small *ngIf="!emailForm.get('sbjTxt').valid && emailForm.get('sbjTxt').touched">
+      <p>{{coreService.getLang() === 'eng' ? 'This field is required! ' : 'Questo campo è obbligatorio!'}}</p>
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="msgTxt">{{getMessageLabel()}}</label>
+    <textarea
+      class="form-control"
+      id="msgTxt"
+      formControlName="msgTxt"
+      rows="6">
+    </textarea>
+    <small *ngIf="!emailForm.get('msgTxt').valid && emailForm.get('msgTxt').touched">
+      <p>{{coreService.getLang() === 'eng' ? 'This field is required! ' : 'Questo campo è obbligatorio!'}}</p>
+    </small>
+  </div>
+
+  <button id="submitEmail" class="btn btnOrange">{{getButtonText()}}</button>
+</form>

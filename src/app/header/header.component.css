@@ -1,0 +1,25 @@
+.nav-item a {
+  color: white !important; }
+
+.nav-item a:hover {
+  color: #dbdbdb !important;
+  cursor: pointer; }
+
+header {
+  background-color: #3d3d3d;
+  border-bottom: 2px solid white; }
+
+.flag {
+  cursor: pointer;
+  border-radius: 2px; }
+
+#logo {
+  margin-bottom: 2px; }
+
+.navbar-toggler {
+  border-color: #e1e1e1; }
+
+.navbar-toggler span {
+  color: #e1e1e1; }
+
+/*# sourceMappingURL=header.component.css.map */

@@ -1,0 +1,34 @@
+<div class="card my-2">
+  <div class="card-block">
+    <a [href]="project.attachedFile" target="_blank" *ngIf="project.attachedFile; else noAttachedFile">
+      <div class="bgImage rounded-top" [ngStyle]="{'background': 'url(' + project.attachedImage + ') no-repeat center center'}">
+        <div
+          *ngIf="browserDetector.detectIE() < 12"
+          class="darkenIe rounded-top"></div>
+      </div>
+      <div class="m-auto text-section text-center text-justify m-3">
+        <h4 class="card-title"> {{ project.title }} </h4>
+        <p class="card-text">{{ project.details | capitalize }}</p>
+      </div>
+    </a>
+    <ng-template #noAttachedFile>
+      <div class="bgImage rounded-top" [ngStyle]="{'background': 'url(' + project.attachedImage + ') no-repeat center center'}"></div>
+      <div class="m-auto text-section text-center text-justify m-3">
+        <h4 class="card-title"> {{ project.title }} </h4>
+        <p class="card-text">{{ project.details | capitalize }}</p>
+      </div>
+    </ng-template>
+  </div>
+  <div class="card-footer" *ngIf="project.folders">
+    <a
+      data-toggle="modal"
+      [id]="'btnFolders_'+ project.id"
+      (click)="projectsService.openModal(project)"
+      #btnSender>
+      <div class="text-center">
+        <i class="mr-1 fa fa-folder"></i>
+        <strong>FILES</strong>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="mt-2">
+  <div class="d-flex flex-row">
+    <div class="certCol" *ngIf="occurrenceRef.certificates.length > 0">
+      <button
+        class="button silverButton"
+        data-toggle="collapse"
+        (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed"
+        [attr.aria-controls]="'certificates_' +
+           categoryName +
+            '_' + occurrenceRef.id">
+        <i class="fa fa-id-card certificateIcon" aria-hidden="true"></i>
+        <small>{{ coreService.getLang() === 'eng' ? 'Certificates' : 'Certificati' }}</small>
+        <i class="ml-2" [ngClass]="isCollapsed ? 'fa fa-caret-down' : 'fa fa-caret-right orange'" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="imgCol" *ngIf="occurrenceRef.images.length > 0">
+      <button
+        class="button silverButton"
+        data-toggle="modal"
+        [id]="'btnImg_'+ categoryName + '_' + occurrenceRef.id"
+        (click)="cvImagesService.openModal(btnSender.id)"
+        #btnSender
+      >
+        <i class="fa fa-picture-o certificateIcon" aria-hidden="true"></i>
+        <small>{{ coreService.getLang() === 'eng' ? 'Pictures' : 'Foto' }}</small>
+      </button>
+    </div>
+  </div>
+</div>
+<div
+  class="ml-2 m-0 p-0 rounded-bottom  cvEduList collapse"
+  [collapse]="isCollapsed"
+  [id]="'certificates_' +
+    categoryName +
+    '_' + occurrenceRef.id"
+  *ngIf="occurrenceRef.certificates.length > 0"
+>
+  <ul class=" listExamHeader p-0 m-0">
+    <app-tl-certificate
+      *ngFor="let certificateRef of occurrenceRef.certificates; let i = index"
+      [certificate]="certificateRef" [index]="i"></app-tl-certificate>
+  </ul>
+</div>

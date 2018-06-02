@@ -1,0 +1,24 @@
+<div id="introContainer" [@visibilityChanged]="visibilityState" (@visibilityChanged.done)="redirectHome($event)">
+  <div *ngFor="let polaroid of polaroidCount; let i = index">
+    <div  [id]="'polaDiv_' + i" class="polaroidFrameDiv"
+          [ngStyle]="{
+              '-webkit-transform': 'rotate(' + (360 / polaroidNumber) * i + 'deg)',
+              '-ms-transform': 'rotate(' + (360 / polaroidNumber) * i + 'deg)',
+              'transform': 'rotate(' + (360 / polaroidNumber) * i + 'deg)'}">
+      <div class="polaroidFrame"
+           [@frameOpacity]="frameOpacityState[i]"
+           (@frameOpacity.done)="startPicOpacity($event, i)">
+        <img class="polaroidPic"
+             [src]="'../../../assets/images/home/polaroids/' + i + '.jpg'"
+             [@picOpacity]="picOpacityState[i]">
+      </div>
+    </div>
+  </div>
+
+  <img
+    id="homePageTitle"
+    src="../../assets/images/home/largeTitle.png"
+    class="my-auto mx-auto" [@brandOpacity]="brandOpacityState"
+    (@brandOpacity.done)="changeVisibility($event)">
+</div>
+<div id="background" [@bgOpacity]="bgOpacityState"></div>

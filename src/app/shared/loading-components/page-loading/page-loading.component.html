@@ -1,0 +1,8 @@
+<div id="loading" [@visibilityChanged]="visiblityState" *ngIf="!isSquare">
+  <img id="denisLogo" src="/assets/images/DenisLogo.png">
+  <div id="loader"></div>
+</div>
+
+<div class="divLoading" [@visibilityChanged]="visiblityState" *ngIf="isSquare">
+  <div class="divLoader"></div>
+</div>

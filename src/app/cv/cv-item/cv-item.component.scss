@@ -1,0 +1,32 @@
+@media screen and (min-width: 992px) { /*all desktop devices*/
+  .titleContainer a:hover {
+    text-decoration: underline;
+  }
+
+  .leftColumn {
+    border-right: 1px solid black;
+  }
+}
+
+@media screen and (max-width: 767px) { /*all smartphones */
+  .leftColumn {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.leftColumn {
+  color: #ff7200;
+}
+
+.titleContainer a {
+  color:#ff7200;
+}
+
+.titleContainer a:focus {
+  text-decoration:underline;
+}
+
+.noLink {
+  color:#ff7200;
+}

@@ -1,0 +1,10 @@
+#timelinePage {
+  border: #d1d1d1 solid 1px;
+  border-radius: 5px;
+  min-height: 574px; }
+
+#stripe {
+  background-color: #ff7200;
+  width: 100%; }
+
+/*# sourceMappingURL=timeline.component.css.map */

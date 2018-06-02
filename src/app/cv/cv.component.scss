@@ -1,0 +1,14 @@
+::ng-deep .card-header {
+  color: white;
+  background: #3d3d3d;
+}
+
+::ng-deep .card-header:hover {
+  color: #ff7200;
+  background: #2b2b2b;
+}
+
+#stripe {
+  background-color: #ff7200;
+  width: 100%;
+}

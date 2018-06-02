@@ -1,0 +1,79 @@
+<div
+  *ngIf="windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm'"
+  class="alert alert-warning">
+  {{ (coreService.getLang() === 'eng') ?
+  'Swipe left or right to visualize the rest of the chart' :
+  'Trascina a destra o a sinistra per visualizzare la tabella' }}
+</div>
+<div class="row mt-3">
+  <div
+    class="leftColumn col-lg-3 pt-1"
+    [ngClass]="{
+      'text-right pb-3': windowSize.isDesktopSize()}">
+    {{ coreService.getLang() === 'eng' ? 'Mother tongue' : 'Lingua madre' }}
+  </div>
+  <div class="rightColumn col-lg-9 pt-1 pb-3">
+    {{ coreService.getLang() === 'eng' ? 'Italian' : 'Italiano' }}
+  </div>
+</div>
+<div class="row cvTableRow">
+  <div
+    class="leftColumn col-lg-3"
+    [ngClass]="{
+      'text-right': windowSize.isDesktopSize()}">
+    {{ coreService.getLang() === 'eng' ? 'Other languages' : 'Altre lingue' }}
+  </div>
+  <div class="rightColumn col-lg-9">
+    {{ coreService.getLang() === 'eng' ? 'English' : 'Inglese' }}
+    <table class="table cvTable table-responsive mt-3">
+      <tr>
+        <th colspan="2" class="text-uppercase">
+          {{ coreService.getLang() === 'eng' ? 'understanding' : 'comprensione' }}
+        </th>
+        <th colspan="2" class="text-uppercase">
+          {{ coreService.getLang() === 'eng' ? 'speaking' : 'parlato' }}
+        </th>
+        <th class="text-uppercase">
+          {{ coreService.getLang() === 'eng' ? 'writing' : 'produzione scritta' }}
+        </th>
+      </tr>
+      <tr>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Listening' : 'Ascolto' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Reading' : 'Lettura' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Interaction' : 'Interazione' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Oral production' : 'Produzione orale' }}
+        </th>
+        <th></th>
+      </tr>
+      <tr>
+        <td class="text-uppercase">C2</td>
+        <td class="text-uppercase">C2</td>
+        <td class="text-uppercase">C2</td>
+        <td class="text-uppercase">C2</td>
+        <td class="text-uppercase">C2</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: lightgray;">
+          EF Standardized English Test: Advanced / Proficient (C1 / C2 Bilingual, 93/100)
+        </td>
+      </tr>
+    </table>
+    <p style="color: #808182">
+      <small><span class="darkGrey">
+              {{ coreService.getLang() === 'eng' ?
+              'Levels: A1/A2: Basic user - B1/B2: Independent user -' +
+              ' C1/C2 Proficient user (Common European Framework of Reference for Languages)' :
+              'Livelli: A1 e A2: Utente base - B1 e B2: Utente autonomo' +
+              ' - C1 e C2: Utente avanzato> (Quadro Comune Europeo di Riferimento delle Lingue)' }}
+            </span></small>
+    </p>
+
+  </div>
+</div>

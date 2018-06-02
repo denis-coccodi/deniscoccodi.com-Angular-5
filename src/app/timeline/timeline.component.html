@@ -1,0 +1,33 @@
+<div id="stripe" class="py-0">
+  <app-shared-jumbotron></app-shared-jumbotron>
+</div>
+<div [ngClass]="{'container': windowSize.isDesktopSize()}">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center pt-4 pb-1 text-uppercase">
+        {{coreService.getLang() === 'eng' ? 'TIMELINE' : 'STORICO'}}
+      </h3>
+      <div
+        id="timelinePage"
+        class="my-2"
+        [ngClass]="{'mx-1': !windowSize.isDesktopSize()}">
+        <app-frame-loading [visiblityState]="frameLoadingState"></app-frame-loading>
+        <div class="mb-2">
+          <app-ng2-timeline></app-ng2-timeline>
+          <app-slider *ngIf="chartReady"></app-slider>
+        </div>
+        <div class="px-1">
+          <app-tl-item
+            *ngIf="getTlItemVisible()"
+            [categoryName]="getSelectedCategoryName()"
+            [occurrence]="getSelectedOccurrenceRef()"
+            [residence]="getSelectedResidenceRef()">
+          </app-tl-item>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<app-shared-modal></app-shared-modal>

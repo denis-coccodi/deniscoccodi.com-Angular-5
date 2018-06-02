@@ -1,0 +1,63 @@
+<div id="background"
+  [ngStyle]="{'height': windowSizeService.getHeight() - 42 + 'px'}"
+  class="d-flex align-items-center">
+  <div class="container">
+    <div class="rounded my-2 mx-auto p-2" id="bioContainer"
+      [ngStyle]="{'max-height': windowSizeService.getHeight() - 70 + 'px'}">
+      <div *ngIf="coreService.getLang() === 'eng'; else bioIta">
+        <h2 class="text-center">Biography</h2>
+
+        <p>I am a huge tech fan and spent most of my life around computers: when I was nine I started using dos, while at
+          fourteen I had already assembled my first pc.</p>
+
+        <p>Studying and learning have always been a fairly big slice of my priorities and therefore my education process
+          couldn't but be a very articulated one. I studied both arts and IT, but on a personal level I have read books
+          of all kinds, with a certain preference toward body language and psychology</p>
+
+        <p>Later in life I discovered my love for the english language, and through the art of capoeira and sport the
+          one for teaching children and disabled people, but as I did not have enough formation in that direction, and
+          on the other hand, the feeling of not having sufficient work experience in the IT field, I worked a few
+          temporary jobs, and kept myself busy to keep my sense of purpose alive.</p>
+
+        <p>In 2014, I could see my life was getting far from what I wanted it to be, so I invested into one of my
+          dreams and took a plane to Australia where I lived and worked for over fifteen months. This period of time
+          made me understand that I had to take a stand, therefore I chose to resume my studies, and specialize in
+          web development.</p>
+
+        <p>More than a year later, I have now learned HTML5, CSS3, Javascript, jQuery, Php, Sql, Typescript, Angular 5
+          and produced a few websites to acquaint with them. I dedicate to this project from four to eight hours a day
+          to try and simulate work experience as much as I can, and given that it mixes both my creative and technical
+          sides, it is incredibly fascinating. Every time that I think I have reached a good point in the knowledge
+          of this discipline, I find new frameworks or languages that will allow me to enhance my possibilities and
+          for how much I do love doing a lot of things, I think I have finally found my way.</p>
+      </div>
+      <ng-template #bioIta>
+        <h2 class="text-center">Biografia</h2>
+        <p>Sono un grande fan della tecnologia ed ho speso gran parte della mia vita intorno ai computer: a nove
+          anni avevo già iniziato ad utilizzare dos, mentre a quattordici avevo già assemblato il mio primo pc.</p>
+
+        <p>Studiare ed imparare nuove nozioni sono sempre stati una fetta piuttosto grande delle mie priorità e quindi
+          il mio percorso formativo non poteva  che risultare molto contorto. Ho studiato sia arte che informatica, ma
+          a livello personale ho letto libri di tutti i generi e la psicologia mi ha sempre affascinato.</p>
+
+        <p>Più avanti nella mia vita ho scoperto la mia passione per la lingua inglese e attraverso l'arte della capoeira
+          e lo sport, quella dell'insegnamento a bambini e ragazzi disabili, ma dato che non avevo sufficiente
+          preparazione per lavorare in quest'ultimo campo e dall'altra parte la sensazione di non avere sufficiente
+          esperienza lavorativa per trovare lavoro in campo informatico, feci alcuni lavori temporanei e mi tenni
+          occupato per mantenere viva la mia motivazione.</p>
+
+        <p>Nel 2014, realizzai che la mia vita si stava allontanando dalle mie capacità e da ciò che avevo sempre
+          voluto che fosse, quindi investii in uno dei miei sogni e presi un aereo per l'Australia dove vissi e lavorai
+          per quindici mesi. Questo periodo di tempo mi fece comprendere che era ora di prendere una posizione e
+          dunque decisi di riprendere i miei studi e di specializzarmi nello sviluppo web.</p>
+
+        <p>A più di un anno di distanza ho concluso l'apprendimento di HTML5, CSS3, Javascript, jQuery, Php, Sql,
+          Typescript, Angular 5 e prodotto alcuni siti internet per fare pratica. Dedico a questo progetto dalle
+          quattro alle otto ore al giorno per cercare di simulare un'esperienza lavorativa e dato che mischia il mio
+          lato creativo al mio lato tecnico, è incredibilmente affascinante. Ogni volta che penso di aver raggiunto un
+          buon punto nella conoscenza di questa disciplina, scopro un nuovo framework o linguaggio che mi permette di
+          ampliare le mie possibilità e per quanto ami fare molte cose, credo di aver finalmente trovato la mia strada.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+#projContainer {
+  border: 1px solid lightgray;
+  border-radius: 5px; }
+
+.charcoalBg {
+  background-color: #3d3d3d;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+
+.col-lg-auto {
+  min-width: 100px; }
+
+#stripe {
+  background-color: #ff7200;
+  width: 100%; }
+
+/*# sourceMappingURL=projects.component.css.map */

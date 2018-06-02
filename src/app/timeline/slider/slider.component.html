@@ -1,0 +1,57 @@
+<div class="pb-5">
+  <div class="d-flex justify-content-between">
+    <div class="form-group text-center"
+      *ngIf="!(browserDetector.detectIE() < 12) || (browserDetector.detectIE() === false)">
+      <label for="sliderMin" class="d-block">Slider Min</label>
+      <div class="btn-group px-2" id="sliderMin">
+        <button
+          class="btn btnOrange rightBorderBtnOrange"
+          type="button" id="decreaseMin"
+          (click)="onDecrease($event)">–</button>
+        <button
+          class="btn btnOrange leftBorderBtnOrange"
+          type="button" id="increaseMin"
+          (click)="onIncrease($event)">+</button>
+      </div>
+    </div>
+    <div class="p-0 m-0 d-flex align-items-center w-100">
+      <div class="orangeRow text-center p-0">
+        <h4 class="px-2"
+            [ngClass]="{'d-inline': !(windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm')}">
+          {{ timelineService.getMinDate().getFullYear() }}
+        </h4>
+        <h4 [ngClass]="{'d-inline': !(windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm')}">
+          {{ windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm' ? '' : ' - '}}
+        </h4>
+        <h4 class="px-2"
+            [ngClass]="{'d-inline': !(windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm')}">
+          {{ timelineService.getMaxDate().getFullYear() }}
+        </h4>
+      </div>
+    </div>
+    <div class="form-group text-center"
+         *ngIf="!(browserDetector.detectIE() < 12) || (browserDetector.detectIE() === false)">
+      <label for="sliderMax" class="d-block">Slider Max</label>
+      <div class="btn-group px-2 py-0" id="sliderMax">
+        <button
+          class="btn btnCharcoal rightBorderBtnCharc"
+          type="button" id="decreaseMax"
+          (click)="onDecrease($event)">–</button>
+        <button
+          class="btn btnCharcoal leftBorderBtnCharc"
+          type="button"
+          id="increaseMax"
+          (click)="onIncrease($event)">+</button>
+      </div>
+    </div>
+  </div>
+  <div class="form-group px-4">
+    <nouislider
+      #tlSlider
+      [config]="rangeConfig"
+      [(ngModel)]="tlSliderInitializer"
+      (end)="onSliderChange($event)"
+      (set)="onSliderChange($event)">
+    </nouislider>
+  </div>
+</div>

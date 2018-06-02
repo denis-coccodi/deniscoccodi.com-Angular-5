@@ -1,0 +1,16 @@
+<div
+  *ngIf="(windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm') && !displayError"
+  class="alert alert-warning">
+  {{ (coreService.getLang() === 'eng') ?
+  'Swipe left or right to visualize the rest of the chart' :
+  'Trascina a destra o a sinistra per visualizzare la tabella' }}
+</div>
+<table class="table table-responsive hideOverflowY px-3 pt-3">
+  <google-chart
+    #timelineChart
+    [data]="timelineData"
+    (chartReady)="ready()"
+    (chartSelect)="chartSelect($event)"
+    (chartError)="error()">
+  </google-chart>
+</table>

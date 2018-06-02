@@ -1,0 +1,96 @@
+@mixin colorTransition($colorTransTime, $bgColorTransTime) {
+  -webkit-transition: color $colorTransTime, background-color $bgColorTransTime;
+  -moz-transition: color $colorTransTime, background-color $bgColorTransTime;
+  -ms-transition: color $colorTransTime, background-color $bgColorTransTime;
+  -o-transition: color $colorTransTime, background-color $bgColorTransTime;
+  transition: color $colorTransTime, background-color $bgColorTransTime;
+}
+
+@mixin filterTransition($opacityTime) {
+  -webkit-transition: filter $opacityTime;
+  -ms-transition: filter $opacityTime;
+  -o-transition: filter $opacityTime;
+  transition: filter $opacityTime;
+}
+
+@media screen and (min-width: 992px) { /*all desktop devices*/
+
+  .linkBorder:first-child {
+    border-left: 1px solid white !important;
+  }
+
+  .linkBorder {
+    border-right: 1px solid white !important;
+  }
+
+}
+
+header {
+  font-family: "Arial Narrow", "Arial";
+  background-color: #3d3d3d;
+  // background-color: rgba(61, 61, 61, 0.8);
+  border-bottom: 2px solid white;
+}
+
+.nav-item a{
+  color: white !important;
+  background-color: transparent;
+  @include colorTransition(500ms, 800ms);
+}
+
+.nav-item a:hover {
+  color: #ff8300 !important;
+  background-color: #2b2b2b;
+  cursor: pointer;
+  @include colorTransition(500ms, 800ms);
+}
+
+.fa-angular {
+  color: red;
+  float: left;
+}
+
+.flag {
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#logo {
+  margin-bottom: 2px;
+}
+
+.navbar-toggler {
+  border-color: #e1e1e1;
+}
+
+.navbar-toggler span {
+  color: #e1e1e1;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+.greyscale {
+  @include filterTransition(500ms);
+}
+
+.greyscale:hover {
+  filter: grayscale(100%);
+  @include filterTransition(500ms);
+}
+
+.darkenImage {
+  filter: brightness(1);
+  @include filterTransition(500ms);
+}
+
+.darkenImage:hover {
+  filter: brightness(0.45);
+  @include filterTransition(500ms);
+}
+
+.darkerBg {
+  background-color: #2b2b2b !important;
+}
+

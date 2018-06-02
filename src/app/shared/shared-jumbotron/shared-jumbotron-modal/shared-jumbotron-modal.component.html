@@ -1,0 +1,22 @@
+<ng-template #jumboModalTempRef>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left text-truncate">{{ sharedJumbotronService.getModalTitle() }}</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="sharedJumbotronService.getModalRef().hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="assets/images/DenisImg.jpg"
+      *ngIf="sharedJumbotronService.getSenderId() === 'DenisImgLink'"
+      class="img-fluid rounded" alt="Denis_Coccodi">
+    <app-jumbotron-addresses *ngIf="
+      sharedJumbotronService.getSenderId() === 'address_savi' ||
+      sharedJumbotronService.getSenderId() === 'address_milan'">
+    </app-jumbotron-addresses>
+    <app-email-client *ngIf="sharedJumbotronService.getSenderId() === 'emailClient'"></app-email-client>
+  </div>
+</ng-template>

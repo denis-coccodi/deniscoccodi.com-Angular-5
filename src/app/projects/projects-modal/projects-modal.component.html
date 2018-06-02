@@ -1,0 +1,19 @@
+<ng-template #projModalRef>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left text-truncate">{{ projectsService.getCurrentModalProject().title }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="projectsService.getModalRef().hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <ul class="pl-0 ml-0">
+        <app-projects-recursion
+          [recursionIndex]="0"
+          [project]="projectsService.getCurrentModalProject()"
+          [folder]="projectsService.getCurrentModalProject().folders[0][0]">
+        </app-projects-recursion>
+      </ul>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,12 @@
+<ng-template #modalTempRef>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left text-truncate">{{ cvImgModalService.getCurrentImageSet().desc }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="cvImgModalService.getModalRef().hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-shared-carousel *ngIf="cvImgModalService.getCurrentImageSet()"></app-shared-carousel>
+  </div>
+</ng-template>
+

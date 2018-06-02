@@ -1,0 +1,42 @@
+@media screen and (min-width: 992px) { /*all desktop devices*/
+  .leftColumn {
+    border-right: 1px solid black;
+  }
+}
+
+@media screen and (max-width: 767px) { /*all smartphones */
+  .leftColumn {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.leftColumn {
+  color: #ff7200;
+}
+
+.titleContainer a {
+  color:#ff7200;
+}
+
+.noLink {
+  color:#ff7200;
+}
+
+.cvRowContainer {
+  max-width: 800px;
+  border: #d1d1d1 solid 1px;
+  border-radius: 5px;
+}
+
+.charcoal {
+  color: #3d3d3d;
+}
+
+.invisible {
+  visibility:hidden;
+}
+
+.visible {
+  visibility:visible;
+}

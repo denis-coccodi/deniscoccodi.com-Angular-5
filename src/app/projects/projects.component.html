@@ -1,0 +1,27 @@
+<div id="stripe" class="py-0">
+  <app-shared-jumbotron></app-shared-jumbotron>
+</div>
+<div [ngClass]="{'container': windowSize.isDesktopSize()}">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center pt-4 text-uppercase">
+        {{coreService.getLang() === 'eng' ? 'Projects' : 'Progetti'}}
+      </h3>
+      <div class="container">
+        <div class="d-flex flex-column container mx-auto mt-4 mb-1" id="projContainer">
+          <div class="p-2">
+            <div class="card-deck d-flex justify-content-between">
+              <app-projects-item
+                [ngClass]="{'mx-auto': windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm'}"
+                [ngStyle]="{'float': 'left'}"
+                *ngFor="let project of getProjects()"
+                [project]="project"></app-projects-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+<app-projects-modal></app-projects-modal>

@@ -1,0 +1,13 @@
+
+<app-frame-loading [visiblityState]="frameLoadingState"></app-frame-loading>
+<iframe
+  id="modalMap"
+  class=""
+  (load)="onIframeLoad()"
+  [src]="(sharedJumbotronService.getAddressLink() | sanitizer)"
+  frameborder="0"
+  style="border:0"
+  allowfullscreen
+  [height]="addressIframe.offsetWidth"
+  #addressIframe>
+</iframe>

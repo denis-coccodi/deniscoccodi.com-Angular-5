@@ -1,0 +1,26 @@
+@import url(../../../silverButton.scss);
+
+@media screen and (min-width: 992px) { /*all desktop devices*/
+
+  .imgCol {
+    margin-right: -40px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.certificateIcon {
+  margin-right: 8px;
+}
+
+.orange {
+  color: #ff7200;
+}
+
+.cvEduList {
+  max-width: 350px;
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}

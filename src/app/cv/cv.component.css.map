@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sBAAuB;EACrB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,OAAO;;AAGrB,4BAA6B;EAC3B,KAAK,EAAE,OAAO;EACd,UAAU,EAAE,OAAO;;AAGrB,OAAQ;EACN,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,IAAI",
+"sources": ["cv.component.scss"],
+"names": [],
+"file": "cv.component.css"
+}

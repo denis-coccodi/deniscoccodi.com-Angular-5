@@ -1,0 +1,8 @@
+<li class="listExamItem mx-0 my-auto px-2 py-2" [ngClass]="[index % 2 === 0 ? 'even' : 'odd']">
+  <p  class="m-0 my-auto p-0">
+    <a [href]="'./' + certificate.attachedFile" target="_blank">
+      <i class="mr-1 fa fa-fw fa-file-pdf-o certificateListIcon" aria-hidden="true"></i>
+      {{ certificate.description + ' - ' + certificate.score }}
+    </a>
+  </p>
+</li>

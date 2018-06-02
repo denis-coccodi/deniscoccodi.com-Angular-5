@@ -1,0 +1,73 @@
+<div
+  *ngIf="windowSize.getCurrentSize() === 'xs' || windowSize.getCurrentSize() === 'sm'"
+  class="alert alert-warning">
+  {{ (coreService.getLang() === 'eng') ?
+  'Swipe left or right to visualize the rest of the chart' :
+  'Trascina a destra o a sinistra per visualizzare la tabella' }}
+</div>
+<div class="row mt-5">
+  <div
+    class="leftColumn col-lg-3 pb-2"
+    [ngClass]="{
+      'text-right': windowSize.isDesktopSize()}">
+      <span class="cvLeftSide">
+        {{ coreService.getLang() === 'eng' ? ('digital competence' | capitalize) : 'competenza digitale' | capitalize }}
+      </span>
+  </div>
+  <div class="rightColumn col-lg-9">
+    <table class="table cvTable table-responsive">
+      <tr>
+        <th class="text-uppercase" colspan="5">
+          {{ coreService.getLang() === 'eng' ? 'self-assessment' : 'autovalutazione' }}
+        </th>
+      </tr>
+      <tr>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Information processing' : 'Elaborazione delle informazioni' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Communication' : 'Comunicazione' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Content creation' : 'Creazione dei contenuti' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Safety' : 'Sicurezza' }}
+        </th>
+        <th>
+          {{ coreService.getLang() === 'eng' ? 'Problem solving' : 'Risoluzione di problemi' }}
+        </th>
+      </tr>
+      <tr>
+        <td>
+          {{ coreService.getLang() === 'eng' ? 'Independent user' : 'Utente autonomo' }}
+        </td>
+        <td>
+          {{ coreService.getLang() === 'eng' ? 'Proficient user' : 'Utente avanzato' }}
+        </td>
+        <td>
+          {{ coreService.getLang() === 'eng' ? 'Independent user' : 'Utente autonomo' }}
+        </td>
+        <td>
+          {{ coreService.getLang() === 'eng' ? 'Independent user' : 'Utente autonomo' }}
+        </td>
+        <td>
+          {{ coreService.getLang() === 'eng' ? 'Independent user' : 'Utente autonomo' }}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div
+    class="leftColumn col-lg-3"
+    [ngClass]="{
+      'text-right': windowSize.isDesktopSize()}">
+      <span class="cvLeftSide">
+        {{ coreService.getLang() === 'eng' ? 'Driving license' : 'Patente di guida' }}
+      </span>
+  </div>
+  <div class="rightColumn col-lg-9">
+    <span class="cvTitle">A1, B</span>
+  </div>
+</div>

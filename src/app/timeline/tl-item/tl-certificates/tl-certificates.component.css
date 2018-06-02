@@ -1,0 +1,47 @@
+@media screen and (min-width: 992px) {
+  /*all desktop devices*/
+  .imgCol {
+    margin-right: -40px; } }
+ul {
+  list-style: none; }
+
+.silverButton, .silverButton:visited {
+  color: #3d3d3d;
+  margin-right: 10px;
+  border-radius: 30px;
+  border: 1px solid lightgray;
+  background: white;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, white 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, white 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+  /* IE6-9 */ }
+
+.silverButton:hover, .silverButton:focus {
+  background: #fefefe;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2e2',GradientType=0 );
+  /* IE6-9 */ }
+
+.orange {
+  color: #ff7200; }
+
+.certificateIcon {
+  margin-right: 8px; }
+
+.cvEduList {
+  max-width: 350px;
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray; }
+
+/*# sourceMappingURL=tl-certificates.component.css.map */
